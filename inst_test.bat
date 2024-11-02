@@ -63,9 +63,9 @@ echo URL_PY37: %URL_PY37%
 
 :: TODO: Download files
 
-::echo.
-::echo Now I will run my script 'init.ps1'.
-::pause
+echo.
+echo Now I will run my script 'init.ps1'.
+pause
 ::PowerShell -File init.ps1
 
 :: NOTE: Running 'init.ps1' will cause error:
@@ -74,6 +74,9 @@ echo URL_PY37: %URL_PY37%
 :: information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
 ::    + CategoryInfo          : SecurityError: (:) [], ParentContainsErrorRecordException
 ::    + FullyQualifiedErrorId : UnauthorizedAccess
+
+:: https://stackoverflow.com/questions/2035193/how-to-run-a-powershell-script
+PowerShell -executionpolicy bypass -File init.ps1
 
 
 
