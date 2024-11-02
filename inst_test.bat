@@ -86,8 +86,8 @@ PowerShell -executionpolicy bypass -File init.ps1
 
 :: Install Git
 call "%PATH_APP_GIT%\bin\git.exe" --version
-::SET COM=%PATH_INSTALLERS%\%FILE_GIT% /SILENT /LOADINF="git.inf" /LOG="%PATH_TOY_BOX%git.log" /DIR="%PATH_APP_GIT%"
-SET COM=%PATH_INSTALLERS%\%FILE_GIT%  /LOG="%PATH_TOY_BOX%git.log" /DIR="%PATH_APP_GIT%"
+SET COM=%PATH_INSTALLERS%\%FILE_GIT% /SILENT /LOADINF="git.inf" /LOG="%PATH_TOY_BOX%git.log" /DIR="%PATH_APP_GIT%"
+::SET COM=%PATH_INSTALLERS%\%FILE_GIT% /SAVEINF="git.inf" /LOG="%PATH_TOY_BOX%git.log" /DIR="%PATH_APP_GIT%"
 
 :: Install only if not found.
 ::if %errorlevel% neq 0 (

@@ -1,0 +1,7 @@
+[Setup]
+Lang=default
+Group=Git
+NoIcons=0
+SetupType=default
+Components=ext,ext\shellhere,ext\guihere,gitlfs,assoc,assoc_sh,scalar
+Tasks=
