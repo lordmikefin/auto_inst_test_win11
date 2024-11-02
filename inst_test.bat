@@ -61,7 +61,7 @@ echo URL_PY37: %URL_PY37%
 
 
 
-:: TODO: Download files
+:: NOTE: Download files
 
 echo.
 echo Now I will run my script 'init.ps1'.
