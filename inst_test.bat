@@ -65,7 +65,7 @@ echo URL_PY37: %URL_PY37%
 
 echo.
 echo Now I will run my script 'init.ps1'.
-pause
+::pause
 ::PowerShell -File init.ps1
 
 :: NOTE: Running 'init.ps1' will cause error:
@@ -79,6 +79,30 @@ pause
 PowerShell -executionpolicy bypass -File init.ps1
 
 
+
+
+:: NOTE: Read more about silent / unattended git installation
+::   https://github.com/msysgit/msysgit/wiki/Silent-or-Unattended-Installation
+
+:: Install Git
+call "%PATH_APP_GIT%\bin\git.exe" --version
+::SET COM=%PATH_INSTALLERS%\%FILE_GIT% /SILENT /LOADINF="git.inf" /LOG="%PATH_TOY_BOX%git.log" /DIR="%PATH_APP_GIT%"
+SET COM=%PATH_INSTALLERS%\%FILE_GIT%  /LOG="%PATH_TOY_BOX%git.log" /DIR="%PATH_APP_GIT%"
+
+:: Install only if not found.
+::if %errorlevel% neq 0 (
+::	:: Got error. Git is not yet installed.
+::	echo.
+::	echo Install Git
+::	echo " $ call %COM%"
+::	call %COM%
+::) else (
+::	echo.
+::	echo Git is already installed.
+::)
+echo Install Git
+echo " $ call %COM%"
+call %COM%
 
 
 :: TODO: Do installing :)
