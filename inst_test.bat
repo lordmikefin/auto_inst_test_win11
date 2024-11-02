@@ -100,12 +100,35 @@ SET COM=%PATH_INSTALLERS%\%FILE_GIT%  /LOG="%PATH_TOY_BOX%git.log" /DIR="%PATH_A
 ::	echo.
 ::	echo Git is already installed.
 ::)
+echo.
 echo Install Git
 echo " $ call %COM%"
 call %COM%
 
 
-:: TODO: Do installing :)
+
+:: Install Python
+call "%PATH_APP_PY37%\python.exe" --version
+SET COM=%PATH_INSTALLERS%\%FILE_PY37% /quiet InstallAllUsers=1 TargetDir="%PATH_APP_PY37%" PrependPath=1
+::SET COM=%PATH_INSTALLERS%\%FILE_PY37%  InstallAllUsers=1 TargetDir="%PATH_APP_PY37%" PrependPath=1
+
+::if %errorlevel% neq 0 (
+::	:: Got error. Git is not yet installed.
+::	echo.
+::	echo Install Python
+::	echo " $ call %COM%"
+::	:: TODO: 'quiet' mode does not install Python if installer ask to select 'install', 'repair', etc.
+::	call %COM%
+::) else (
+::	echo.
+::	echo Git is already installed.
+::)
+echo.
+echo Install Python
+echo " $ call %COM%"
+:: TODO: 'quiet' mode does not install Python if installer ask to select 'install', 'repair', etc.
+call %COM%
+
 
 
 echo.
