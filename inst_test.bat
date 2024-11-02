@@ -60,6 +60,24 @@ echo URL_PY37: %URL_PY37%
 
 
 
+
+:: TODO: Download files
+
+::echo.
+::echo Now I will run my script 'init.ps1'.
+::pause
+::PowerShell -File init.ps1
+
+:: NOTE: Running 'init.ps1' will cause error:
+
+::File C:\git\auto_inst_test_win11\init.ps1 cannot be loaded because running scripts is disabled on this system. For more
+:: information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+::    + CategoryInfo          : SecurityError: (:) [], ParentContainsErrorRecordException
+::    + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+
+
 :: TODO: Do installing :)
 
 
