@@ -18,14 +18,37 @@
 ::  - Git
 ::  - Python
 
-SET CURRENT_SCRIPT_VER=0.0.1
-SET CURRENT_SCRIPT_DATE=2024-11-02
+SET CURRENT_SCRIPT_VER=0.0.2
+SET CURRENT_SCRIPT_DATE=2024-11-03
 SET CURRENT_SCRIPT=inst_test.bat
 echo CURRENT_SCRIPT_VER: %CURRENT_SCRIPT_VER% (%CURRENT_SCRIPT_DATE%)
 
 :: Testing how to disable UAC and other stops for installing multiple apps at once.
 :: My current windows (10) script does not work:
 ::   https://github.com/lordmikefin/LMAutoSetBotWin/blob/master/init.bat
+
+
+
+:: TODO: Test "administrative privileges"
+::   https://stackoverflow.com/questions/11525056/how-to-create-a-batch-file-to-run-cmd-as-administrator
+
+fsutil dirty query %systemdrive% >nul
+
+if %errorlevel% neq 0 (
+	:: Got error. User has no "administrative privileges"
+	echo.
+	echo I recommend running this script as administrator.
+	echo Or just disable UAC.
+	echo Otherwise UAC is asking confirmation for each app !
+	echo.
+	pause
+) else (
+	echo.
+	echo Has 'administrative privileges'
+	echo.
+)
+::exit /B
+
 
 
 :: Create directory for Installer and install path.
